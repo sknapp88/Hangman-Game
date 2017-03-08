@@ -1,0 +1,21 @@
+.disapearing-man {
+	opacity: 0;
+}
+
+h1, h2 {
+	font-family: 'Diplomata SC', cursive;
+}
+
+#letters li {
+	color: #fff;
+	border-bottom: solid;
+	border-color: black;
+/*	background-color: green;*/
+	display: inline;
+	margin-left: 2px;
+	font-family: 'Cousine', monospace;
+}
+
+.correct-guess {
+	background-color: #7a7700;
+}
