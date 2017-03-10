@@ -7,25 +7,28 @@ var words = [firstWord, secondWord, thirdWord, fourthWord];
 
 var availableLetters, words, guessInput, guess, guessButton, lettersGuessed, lettersMatched, output, man, letters, lives, currentWord, numLettersMatched, messages; 
 
-document.onkeyup = function(event) {
-	guess = (event.key);
-	if (guess === "-");
+var currentWord = words[Math.floor(Math.random() * words.length)];
 
-
-
-
-}
+$(document).on( "keyup", function(event) {
+        var guess = event.key;
+        for (i = 0; i < currentWord.length; i++) {
+            if (guess === currentWord[i]) {
+                $("#letter-"+i).css("background-color", "gray");
+            } 
+        };
+    })
 
 function setup(){
 	availableLetters = ["a","b,","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-	var currentWord = words[Math.floor(Math.random() * words.length)];
+	// var currentWord = words[Math.floor(Math.random() * words.length)];
 	for (i = 0; i < currentWord.length; i ++) {
-		$("#letters").append("<li>" + currentWord[i] + "</li>");
+		var letterEntry = ('<li id="letter-' + i + '">' + currentWord[i] + "</li>");
+		$("#letters").append(letterEntry);
+
 	}
 	
 	
 }
-
 
 
 $( document ).ready(function() {
